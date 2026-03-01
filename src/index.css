@@ -1,0 +1,113 @@
+@import url('bootstrap');
+@import url('bootstrap-icons');
+
+
+/* 
+
+HEADER
+
+*/
+
+header {
+
+  .navbar {
+
+    background-color: #272727;
+
+    a {
+      color: lightgray;
+
+      &:hover {
+
+        color: rgb(255, 123, 0) !important;
+      }
+    }
+
+    .active {
+
+      color: rgb(255, 123, 0) !important;
+
+      .hide-search {
+
+        display: none !important;
+      }
+    }
+
+    .dropdown-toggle:hover,
+    .dropdown-toggle:active {
+
+      background-color: #1f1f1f;
+      color: rgb(255, 123, 0);
+    }
+
+    .dropdown-menu {
+
+      &.show {
+        display: flex !important;
+        flex-direction: row;
+        gap: 10px;
+      }
+
+
+      &:not(.show) {
+        display: none !important;
+      }
+
+      background-color: #272727;
+
+      .dropdown-item:hover {
+
+        background-color: #383838;
+        color: rgb(255, 123, 0);
+      }
+
+      .divide {
+
+        border-left: 1px solid lightgray;
+      }
+    }
+
+  }
+}
+
+
+
+/*
+
+MAIN
+
+*/
+
+main {
+
+
+  background-color: black;
+
+  .jumbo {
+
+    height: 80vh;
+    position: relative;
+
+    .swipe-info {
+      padding: 3rem;
+      color: lightgray;
+      width: 40vw;
+      font-weight: bold;
+      margin-top: auto;
+      margin-right: auto;
+      z-index: 200;
+
+      background: radial-gradient(at center, #272727 10%, #f2f2f200 70%);
+    }
+
+    .swipe-img {
+
+      width: 100%;
+      position: absolute;
+
+
+    }
+  }
+
+
+}

@@ -96,6 +96,8 @@ MAIN
 
 main {
 
+  padding-top: 100px;
+
   min-height: 80vh;
   background-color: black;
 

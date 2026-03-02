@@ -8,6 +8,10 @@ function AnimeProvider({ children }) {
 
     const [animes, setAnimes] = useState([])
 
+    const [italyTrends, setItalyTrends] = useState()
+    const [suggested, setSuggested] = useState()
+    const [dubIta, setDubIta] = useState()
+
 
     function getAnimes() {
 
@@ -33,7 +37,7 @@ function AnimeProvider({ children }) {
     return (
 
         <AnimeContext.Provider
-            value={{ animes }}>
+            value={{ animes, italyTrends, setItalyTrends, suggested, setSuggested, dubIta, setDubIta }}>
             {children}
         </AnimeContext.Provider>
     )

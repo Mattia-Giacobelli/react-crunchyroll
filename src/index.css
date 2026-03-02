@@ -13,6 +13,8 @@
   margin-bottom: 2rem;
 }
 
+
+
 /* 
 
 HEADER
@@ -23,6 +25,9 @@ header {
 
   .navbar {
 
+    width: 100%;
+    position: fixed;
+    z-index: 220;
     background-color: #272727;
 
     a {
@@ -91,7 +96,7 @@ MAIN
 
 main {
 
-
+  min-height: 80vh;
   background-color: black;
 
   .jumbo {
@@ -184,4 +189,87 @@ main {
   }
 
 
+  .col {
+
+    height: 350px;
+
+    .card {
+
+      height: 100%;
+      background-color: black;
+      color: white;
+
+      .card-img-top {
+
+        height: 70%;
+        width: 100%;
+
+        img {
+
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .card-body {
+
+        h6 {
+
+          font-size: 1rem;
+        }
+
+        span {
+
+          font-size: 0.7rem;
+        }
+      }
+
+    }
+  }
+
+}
+
+
+
+
+/*
+
+  FOOTER
+
+*/
+
+footer {
+
+
+
+
+  .container-black {
+
+    margin: 0 auto;
+    background-color: black;
+
+
+    .btn-outline-light:hover {
+      background-color: rgb(59, 59, 59);
+      color: white;
+    }
+
+
+
+  }
+
+  .footer-bcg {
+    background-image: url(./assets/footerBcg.png);
+    background-repeat: repeat;
+    height: 100px;
+
+    .footer-a {
+
+      color: lightgray;
+      text-decoration: none;
+      padding: 1rem;
+
+    }
+  }
 }

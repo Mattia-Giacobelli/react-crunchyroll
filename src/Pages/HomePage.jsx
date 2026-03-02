@@ -7,15 +7,11 @@ import AnimeSwiper from "../Components/AnimeSwiper";
 
 export default function HomePage() {
 
-    const { animes } = useAnimes()
-
-    const [italyTrends, setItalyTrends] = useState()
-    const [suggested, setSuggested] = useState()
-    const [dubIta, setDubIta] = useState()
+    const { animes, italyTrends, setItalyTrends, suggested, setSuggested, dubIta, setDubIta } = useAnimes()
 
     const cardStyle = {
         height: "80vh",
-        width: "100vw",
+        width: "100%",
         background: "#f2f2f2",
         borderRadius: "16px",
         display: "flex",

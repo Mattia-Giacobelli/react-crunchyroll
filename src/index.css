@@ -2,6 +2,17 @@
 @import url('bootstrap-icons');
 
 
+
+.orange-btn {
+
+  color: rgb(255, 123, 0);
+
+  border: 1px solid rgb(255, 123, 0);
+  border-radius: 0px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
 /* 
 
 HEADER
@@ -97,13 +108,76 @@ main {
       margin-right: auto;
       z-index: 200;
 
-      background: radial-gradient(at center, #272727 10%, #f2f2f200 70%);
+      background: radial-gradient(at center, #272727 1%, #f2f2f200 70%);
     }
 
     .swipe-img {
 
       width: 100%;
+      height: 100%;
+      object-fit: cover;
       position: absolute;
+      filter: brightness(0.8);
+
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: lightgray;
+    }
+
+
+
+
+
+  }
+
+  /*
+      Anime sections card
+  */
+
+  .container-custom {
+
+    margin: 0 3vw;
+
+    .anime-swiper {
+
+      width: 100%;
+      height: 350px;
+
+      .swiper-slide {
+        height: 100%;
+
+
+        .anime-swipe-img {
+
+          width: 100%;
+          height: 80%;
+          object-fit: cover;
+          border-radius: 8px;
+          filter: brightness(0.9);
+        }
+
+        .anime-swipe-info {
+          height: 20%;
+          color: white;
+        }
+
+
+
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: lightgray;
+        filter: brightness(2);
+
+      }
+
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        font-size: 30px;
+      }
 
 
     }

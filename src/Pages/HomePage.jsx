@@ -1,12 +1,17 @@
 
 import { useAnimes } from "../Contexts/AnimeContext"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Autoplay, Pagination } from "swiper/modules";
-import { useEffect } from "react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { useEffect, useState } from "react";
+import AnimeSwiper from "../Components/AnimeSwiper";
 
 export default function HomePage() {
 
     const { animes } = useAnimes()
+
+    const [italyTrends, setItalyTrends] = useState()
+    const [suggested, setSuggested] = useState()
+    const [dubIta, setDubIta] = useState()
 
     const cardStyle = {
         height: "80vh",
@@ -23,7 +28,15 @@ export default function HomePage() {
 
 
     useEffect(() => {
-        console.log(animes);
+        // console.log(animes);
+
+        setItalyTrends(animes.filter(anime => anime.dubs?.some(dub => dub.language.toLowerCase() === "italiano") || anime.subs?.some(sub => sub.language.toLowerCase() === "italiano")))
+        // console.log(italyTrends);
+
+        setSuggested(animes.filter(anime => anime.id == 2 || anime.id == 8 || anime.id == 15 || anime.id == 18))
+
+        setDubIta(animes.filter(anime => anime.dubs?.some(dub => dub.language.toLowerCase() === "italiano")))
+
 
     }, [animes])
 
@@ -34,7 +47,7 @@ export default function HomePage() {
 
 
                 <Swiper
-                    modules={[Autoplay, Pagination]}
+                    modules={[Autoplay, Pagination, Navigation]}
                     spaceBetween={20}
                     slidesPerView={1}
                     loop={true}
@@ -43,6 +56,7 @@ export default function HomePage() {
                         disableOnInteraction: false,
                     }}
                     pagination={{ clickable: true }}
+                    navigation={true}
                 >
                     {animes?.map((anime, i) => (
                         i == 2 || i == 8 || i == 15 || i == 18 ?
@@ -73,11 +87,35 @@ export default function HomePage() {
 
             </div>
 
-            <div className="container">
+            <div className="container-custom text-light">
 
+                <h1>Anime di tendenza in Italia</h1>
 
+                <AnimeSwiper animes={italyTrends} />
 
+                <h1>I nostri consigliati per te</h1>
+
+                <AnimeSwiper animes={suggested} />
+
+                <h1>Doppiaggio in Italiano</h1>
+
+                <AnimeSwiper animes={dubIta} />
+
+                <div className="d-flex flex-column justify-content-center align-items-center">
+
+                    <h6 className="text-center text-light  w-50 mt-5">
+                        Stai ancora cercando qualcosa da guardare? <br />
+                        Dai un occhiata al catalogo
+                    </h6>
+
+                    <button className="btn orange-btn">
+                        Vai al catalogo
+                    </button>
+
+                </div>
             </div>
+
+
         </>
     )
 }

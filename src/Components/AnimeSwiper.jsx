@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination, Navigation } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 
 export default function AnimeSwiper({ animes, style }) {
@@ -38,24 +39,29 @@ export default function AnimeSwiper({ animes, style }) {
                 {animes?.map((anime, i) => (
                     <SwiperSlide key={i}>
 
-                        <div style={cardStyle}>
+                        <Link to={`/animes/${anime.id}`}>
 
-                            <img src={`${import.meta.env.VITE_LARAVEL_IMG_URL}/${anime.cover}`} alt="anime cover"
-                                className="anime-swipe-img" />
+                            <div style={cardStyle}>
 
-                            <div className="anime-swipe-info">
-                                <h6>{anime.name}</h6>
+                                <img src={`${import.meta.env.VITE_LARAVEL_IMG_URL}/${anime.cover}`} alt="anime cover"
+                                    className="anime-swipe-img" />
 
-                                <h6>
-                                    {anime.dubs.length > 0 && anime.subs.length > 0 && 'Dub|Sub'}
-                                    {anime.dubs.length == 0 && anime.subs.length > 0 && 'Sottotitoli'}
-                                    {anime.dubs.length > 0 && anime.subs.length == 0 && 'Doppiaggio'}
-                                </h6>
+                                <div className="anime-swipe-info">
+                                    <h6>{anime.name}</h6>
+
+                                    <h6>
+                                        {anime.dubs.length > 0 && anime.subs.length > 0 && 'Dub|Sub'}
+                                        {anime.dubs.length == 0 && anime.subs.length > 0 && 'Sottotitoli'}
+                                        {anime.dubs.length > 0 && anime.subs.length == 0 && 'Doppiaggio'}
+                                    </h6>
+
+                                </div>
+
 
                             </div>
 
+                        </Link>
 
-                        </div>
                     </SwiperSlide>
                 ))}
             </Swiper>

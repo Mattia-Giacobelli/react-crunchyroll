@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useAnimes } from "../Contexts/AnimeContext"
+import { Link } from "react-router-dom"
 
 export default function SearchPage() {
 
@@ -40,32 +41,7 @@ export default function SearchPage() {
 
                             <div key={anime.id} className="col" >
 
-                                <div className="card">
-
-                                    <div className="card-img-top">
-                                        <img src={`${import.meta.env.VITE_LARAVEL_IMG_URL}/${anime.cover}`} alt="cover" />
-                                    </div>
-
-                                    <div className="card-body">
-                                        <h6> {anime.name} </h6>
-
-                                        <span>
-                                            {anime.dubs.length > 0 && anime.subs.length > 0 && 'Dub|Sub'}
-                                            {anime.dubs.length == 0 && anime.subs.length > 0 && 'Sottotitoli'}
-                                            {anime.dubs.length > 0 && anime.subs.length == 0 && 'Doppiaggio'}
-                                        </span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        )
-                    })
-                        :
-                        searchedAnimes?.map(anime => {
-
-                            return (
-
-                                <div key={anime.id} className="col" >
+                                <Link to={`/animes/${anime.id}`}>
 
                                     <div className="card">
 
@@ -84,6 +60,39 @@ export default function SearchPage() {
                                         </div>
                                     </div>
 
+                                </Link>
+
+                            </div>
+                        )
+                    })
+                        :
+                        searchedAnimes?.map(anime => {
+
+                            return (
+
+                                <div key={anime.id} className="col" >
+
+                                    <Link to={`/animes/${anime.id}`}>
+
+                                        <div className="card">
+
+                                            <div className="card-img-top">
+                                                <img src={`${import.meta.env.VITE_LARAVEL_IMG_URL}/${anime.cover}`} alt="cover" />
+                                            </div>
+
+                                            <div className="card-body">
+                                                <h6> {anime.name} </h6>
+
+                                                <span>
+                                                    {anime.dubs.length > 0 && anime.subs.length > 0 && 'Dub|Sub'}
+                                                    {anime.dubs.length == 0 && anime.subs.length > 0 && 'Sottotitoli'}
+                                                    {anime.dubs.length > 0 && anime.subs.length == 0 && 'Doppiaggio'}
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </Link>
+
                                 </div>
                             )
                         })}
@@ -92,7 +101,7 @@ export default function SearchPage() {
                 </div>
 
 
-            </div>
+            </div >
 
         </>
     )

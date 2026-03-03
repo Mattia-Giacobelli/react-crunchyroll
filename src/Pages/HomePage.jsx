@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { useEffect, useState } from "react";
 import AnimeSwiper from "../Components/AnimeSwiper";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
 
@@ -58,30 +59,33 @@ export default function HomePage() {
                         i == 2 || i == 8 || i == 15 || i == 18 ?
                             <SwiperSlide key={i}>
 
-                                <div style={cardStyle}>
+                                <Link to={`/animes/${anime.id}`}>
 
-                                    <img src={`${import.meta.env.VITE_LARAVEL_IMG_URL}/${anime.cover}`} alt="anime cover"
-                                        className="swipe-img" />
+                                    <div style={cardStyle}>
 
-                                    <div className="swipe-info">
-                                        <h1>{anime.name}</h1>
+                                        <img src={`${import.meta.env.VITE_LARAVEL_IMG_URL}/${anime.cover}`} alt="anime cover"
+                                            className="swipe-img" />
 
-                                        <h6>
-                                            <span>{anime.dubs.length + anime.subs.length}</span> Dub|Sub
-                                        </h6>
+                                        <div className="swipe-info">
+                                            <h1>{anime.name}</h1>
 
-                                        <p>
-                                            {anime.plot}
-                                        </p>
+                                            <h6>
+                                                <span>{anime.dubs.length + anime.subs.length}</span> Dub|Sub
+                                            </h6>
+
+                                            <p>
+                                                {anime.plot}
+                                            </p>
+                                        </div>
+
+
                                     </div>
-
-
-                                </div>
+                                </Link>
                             </SwiperSlide> : ''
                     ))}
                 </Swiper>
 
-            </div>
+            </div >
 
             <div className="container-custom text-light">
 
@@ -104,9 +108,9 @@ export default function HomePage() {
                         Dai un occhiata al catalogo
                     </h6>
 
-                    <button className="btn orange-btn">
-                        Vai al catalogo
-                    </button>
+                    <Link className="btn orange-btn-outline" to={'/popular'}>
+                        Vedi tutto
+                    </Link>
 
                 </div>
             </div>

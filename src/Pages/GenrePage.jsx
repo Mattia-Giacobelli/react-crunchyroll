@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 export default function GenrePage() {
 
@@ -46,22 +46,26 @@ export default function GenrePage() {
 
                             <div key={anime.id} className="col" >
 
-                                <div className="card">
+                                <Link to={`/animes/${anime.id}`}>
 
-                                    <div className="card-img-top">
-                                        <img src={`${import.meta.env.VITE_LARAVEL_IMG_URL}/${anime.cover}`} alt="cover" />
+                                    <div className="card">
+
+                                        <div className="card-img-top">
+                                            <img src={`${import.meta.env.VITE_LARAVEL_IMG_URL}/${anime.cover}`} alt="cover" />
+                                        </div>
+
+                                        <div className="card-body">
+                                            <h6> {anime.name} </h6>
+
+                                            <span>
+                                                {anime.dubs.length > 0 && anime.subs.length > 0 && 'Dub|Sub'}
+                                                {anime.dubs.length == 0 && anime.subs.length > 0 && 'Sottotitoli'}
+                                                {anime.dubs.length > 0 && anime.subs.length == 0 && 'Doppiaggio'}
+                                            </span>
+                                        </div>
                                     </div>
 
-                                    <div className="card-body">
-                                        <h6> {anime.name} </h6>
-
-                                        <span>
-                                            {anime.dubs.length > 0 && anime.subs.length > 0 && 'Dub|Sub'}
-                                            {anime.dubs.length == 0 && anime.subs.length > 0 && 'Sottotitoli'}
-                                            {anime.dubs.length > 0 && anime.subs.length == 0 && 'Doppiaggio'}
-                                        </span>
-                                    </div>
-                                </div>
+                                </Link>
 
                             </div>
                         )

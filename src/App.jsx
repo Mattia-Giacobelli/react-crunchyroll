@@ -8,13 +8,14 @@ import SimulcastPage from "./Pages/SimulcastPage";
 import AnimesPage from "./Pages/AnimesPage";
 import ReleasesPage from "./Pages/ReleasesPage";
 import MusicPage from "./Pages/MusicPage";
-import GenresPage from "./Pages/GenresPage";
+import GenresPage from "./Pages/AnimePage";
 import GenrePage from "./Pages/GenrePage";
 import SearchPage from "./Pages/SearchPage";
 import { AnimeProvider } from "./Contexts/AnimeContext";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import AnimePage from "./Pages/AnimePage";
 
 function App() {
 
@@ -30,9 +31,9 @@ function App() {
               <Route path="/popular" element={<PopularPage />} />
               <Route path="/simulcast" element={<SimulcastPage />} />
               <Route path="/animes" element={<AnimesPage />} />
+              <Route path="/animes/:id" element={<AnimePage />} />
               <Route path="/releases" element={<ReleasesPage />} />
               <Route path="/music" element={<MusicPage />} />
-              <Route path="/genres" element={<GenresPage />} />
               <Route path="/genres/:id" element={<GenrePage />} />
               <Route path="/search" element={<SearchPage />} />
             </Route>

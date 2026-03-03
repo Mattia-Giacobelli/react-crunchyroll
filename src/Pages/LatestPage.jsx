@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useAnimes } from "../Contexts/AnimeContext"
+import { Link } from "react-router-dom"
 
 export default function LatestPage() {
 
@@ -61,22 +62,26 @@ export default function LatestPage() {
 
                             <div key={anime.id} className="col" >
 
-                                <div className="card">
+                                <Link to={`/animes/${anime.id}`}>
 
-                                    <div className="card-img-top">
-                                        <img src={`${import.meta.env.VITE_LARAVEL_IMG_URL}/${anime.cover}`} alt="cover" />
+                                    <div className="card">
+
+                                        <div className="card-img-top">
+                                            <img src={`${import.meta.env.VITE_LARAVEL_IMG_URL}/${anime.cover}`} alt="cover" />
+                                        </div>
+
+                                        <div className="card-body">
+                                            <h6> {anime.name} </h6>
+
+                                            <span>
+                                                {anime.dubs.length > 0 && anime.subs.length > 0 && 'Dub|Sub'}
+                                                {anime.dubs.length == 0 && anime.subs.length > 0 && 'Sottotitoli'}
+                                                {anime.dubs.length > 0 && anime.subs.length == 0 && 'Doppiaggio'}
+                                            </span>
+                                        </div>
                                     </div>
 
-                                    <div className="card-body">
-                                        <h6> {anime.name} </h6>
-
-                                        <span>
-                                            {anime.dubs.length > 0 && anime.subs.length > 0 && 'Dub|Sub'}
-                                            {anime.dubs.length == 0 && anime.subs.length > 0 && 'Sottotitoli'}
-                                            {anime.dubs.length > 0 && anime.subs.length == 0 && 'Doppiaggio'}
-                                        </span>
-                                    </div>
-                                </div>
+                                </Link>
 
                             </div>
                         )
@@ -96,23 +101,26 @@ export default function LatestPage() {
 
                             <div key={anime.id} className="col" >
 
-                                <div className="card">
+                                <Link to={`/animes/${anime.id}`}>
 
-                                    <div className="card-img-top">
-                                        <img src={`${import.meta.env.VITE_LARAVEL_IMG_URL}/${anime.cover}`} alt="cover" />
+                                    <div className="card">
+
+                                        <div className="card-img-top">
+                                            <img src={`${import.meta.env.VITE_LARAVEL_IMG_URL}/${anime.cover}`} alt="cover" />
+                                        </div>
+
+                                        <div className="card-body">
+                                            <h6> {anime.name} </h6>
+
+                                            <span>
+                                                {anime.dubs.length > 0 && anime.subs.length > 0 && 'Dub|Sub'}
+                                                {anime.dubs.length == 0 && anime.subs.length > 0 && 'Sottotitoli'}
+                                                {anime.dubs.length > 0 && anime.subs.length == 0 && 'Doppiaggio'}
+                                            </span>
+                                        </div>
                                     </div>
 
-                                    <div className="card-body">
-                                        <h6> {anime.name} </h6>
-
-                                        <span>
-                                            {anime.dubs.length > 0 && anime.subs.length > 0 && 'Dub|Sub'}
-                                            {anime.dubs.length == 0 && anime.subs.length > 0 && 'Sottotitoli'}
-                                            {anime.dubs.length > 0 && anime.subs.length == 0 && 'Doppiaggio'}
-                                        </span>
-                                    </div>
-                                </div>
-
+                                </Link>
                             </div>
                         )
                     }) : <h3> Nessuna uscita nell'ultima settimana </h3>}
@@ -132,19 +140,24 @@ export default function LatestPage() {
 
                                 <div className="card">
 
-                                    <div className="card-img-top">
-                                        <img src={`${import.meta.env.VITE_LARAVEL_IMG_URL}/${anime.cover}`} alt="cover" />
-                                    </div>
+                                    <Link to={`/animes/${anime.id}`}>
 
-                                    <div className="card-body">
-                                        <h6> {anime.name} </h6>
+                                        <div className="card-img-top">
+                                            <img src={`${import.meta.env.VITE_LARAVEL_IMG_URL}/${anime.cover}`} alt="cover" />
+                                        </div>
 
-                                        <span>
-                                            {anime.dubs.length > 0 && anime.subs.length > 0 && 'Dub|Sub'}
-                                            {anime.dubs.length == 0 && anime.subs.length > 0 && 'Sottotitoli'}
-                                            {anime.dubs.length > 0 && anime.subs.length == 0 && 'Doppiaggio'}
-                                        </span>
-                                    </div>
+                                        <div className="card-body">
+                                            <h6> {anime.name} </h6>
+
+                                            <span>
+                                                {anime.dubs.length > 0 && anime.subs.length > 0 && 'Dub|Sub'}
+                                                {anime.dubs.length == 0 && anime.subs.length > 0 && 'Sottotitoli'}
+                                                {anime.dubs.length > 0 && anime.subs.length == 0 && 'Doppiaggio'}
+                                            </span>
+                                        </div>
+
+                                    </Link>
+
                                 </div>
 
                             </div>
@@ -153,7 +166,7 @@ export default function LatestPage() {
 
                 </div>
 
-            </div>
+            </div >
 
         </>
     )

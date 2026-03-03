@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { useAnimes } from "../Contexts/AnimeContext"
 
 export default function PopularPage() {
@@ -20,19 +21,24 @@ export default function PopularPage() {
 
                                 <div className="card">
 
-                                    <div className="card-img-top">
-                                        <img src={`${import.meta.env.VITE_LARAVEL_IMG_URL}/${anime.cover}`} alt="cover" />
-                                    </div>
+                                    <Link to={`/animes/${anime.id}`}>
 
-                                    <div className="card-body">
-                                        <h6> {anime.name} </h6>
+                                        <div className="card-img-top">
+                                            <img src={`${import.meta.env.VITE_LARAVEL_IMG_URL}/${anime.cover}`} alt="cover" />
+                                        </div>
 
-                                        <span>
-                                            {anime.dubs.length > 0 && anime.subs.length > 0 && 'Dub|Sub'}
-                                            {anime.dubs.length == 0 && anime.subs.length > 0 && 'Sottotitoli'}
-                                            {anime.dubs.length > 0 && anime.subs.length == 0 && 'Doppiaggio'}
-                                        </span>
-                                    </div>
+                                        <div className="card-body">
+                                            <h6> {anime.name} </h6>
+
+                                            <span>
+                                                {anime.dubs.length > 0 && anime.subs.length > 0 && 'Dub|Sub'}
+                                                {anime.dubs.length == 0 && anime.subs.length > 0 && 'Sottotitoli'}
+                                                {anime.dubs.length > 0 && anime.subs.length == 0 && 'Doppiaggio'}
+                                            </span>
+                                        </div>
+
+                                    </Link>
+
                                 </div>
 
                             </div>

@@ -3,6 +3,13 @@
 
 
 
+/*CHange swiper slide pagination color*/
+:root {
+
+  --swiper-pagination-color: #ff8c00;
+  --swiper-pagination-bullet-inactive-color: #999;
+}
+
 
 .orange {
 
@@ -156,9 +163,29 @@ main {
       color: lightgray;
     }
 
+    .swiper-pagination {
+      text-align: left !important;
+      padding-left: 20px;
 
+      left: 0 !important;
+      width: auto !important;
+    }
 
+    .swiper-pagination-progressbar {
+      background: rgba(0, 0, 0, 0.1) !important;
+      width: 150px !important;
+      height: 4px !important;
+      left: 20px !important;
+      top: auto !important;
+      bottom: 30px !important;
+      border-radius: 10px;
+      overflow: hidden;
+    }
 
+    .swiper-pagination-progressbar-fill {
+      background: #ff8c00 !important;
+      transition-timing-function: linear !important;
+    }
 
   }
 

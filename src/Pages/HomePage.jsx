@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 export default function HomePage() {
 
-    const { animes, italyTrends, setItalyTrends, suggested, setSuggested, dubIta, setDubIta } = useAnimes()
+    const { animes, italyTrends, setItalyTrends, suggested, setSuggested, dubIta, setDubIta, watchAdded } = useAnimes()
 
     const cardStyle = {
         height: "80vh",
@@ -52,7 +52,10 @@ export default function HomePage() {
                         delay: 5000, // 3 secondi
                         disableOnInteraction: false,
                     }}
-                    pagination={{ clickable: true }}
+                    pagination={{
+                        clickable: true,
+                        type: 'progressbar',
+                    }}
                     navigation={true}
                 >
                     {animes?.map((anime, i) => (
@@ -72,11 +75,19 @@ export default function HomePage() {
                                             <h6>
                                                 <span>{anime.dubs.length + anime.subs.length}</span> Dub|Sub
                                             </h6>
-
+                                            <div>
+                                                <button className="btn orange-btn me-3">
+                                                    INIZIA A GUARDARE
+                                                </button>
+                                                <button onClick={() => { toggleWatchlist(anime) }} className="btn orange-btn-outline me-3">
+                                                    <i class={`bi ${watchAdded ? "bi-bookmark-fill" : "bi-bookmark"}`}></i>
+                                                </button>
+                                            </div>
                                             <p>
                                                 {anime.plot}
                                             </p>
                                         </div>
+
 
 
                                     </div>

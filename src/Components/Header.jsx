@@ -109,6 +109,9 @@ export default function Header() {
                             <NavLink className="btn btn-outline-dark" to={'/search'}>
                                 <i class="bi bi-search hide-search"></i>
                             </NavLink>
+                            <NavLink className="btn btn-outline-dark" to={'/watchlist'}>
+                                <i class="bi bi-bookmark"></i>
+                            </NavLink>
                         </div>
                     </div>
                 </nav>

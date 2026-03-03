@@ -1,8 +1,11 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
+import { useAnimes } from "../Contexts/AnimeContext"
 
 export default function AnimePage() {
+
+    const { watchAdded, toggleWatchlist } = useAnimes()
 
     const { id } = useParams()
 
@@ -95,8 +98,8 @@ export default function AnimePage() {
                         <button className="btn orange-btn me-3">
                             INIZIA A GUARDARE
                         </button>
-                        <button className="btn orange-btn-outline me-3">
-                            <i class="bi bi-bookmark"></i>
+                        <button onClick={() => { toggleWatchlist(anime) }} className="btn orange-btn-outline me-3">
+                            <i class={`bi ${watchAdded ? "bi-bookmark-fill" : "bi-bookmark"}`}></i>
                         </button>
 
 

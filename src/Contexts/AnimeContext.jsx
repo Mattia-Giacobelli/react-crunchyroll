@@ -14,6 +14,32 @@ function AnimeProvider({ children }) {
     const [search, setSearch] = useState('')
 
 
+    const [watchAdded, setWatchAdded] = useState(false);
+
+    const [watchlist, setWatchlist] = useState(() => {
+        const saved = localStorage.getItem("watchlist");
+        return saved ? JSON.parse(saved) : [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem("watchlist", JSON.stringify(watchlist));
+    }, [watchlist]);
+
+    function toggleWatchlist(anime) {
+
+        const exists = watchlist.some(item => item.id === anime.id);
+
+        if (exists) {
+            setWatchlist(prev => prev.filter(item => item.id !== anime.id));
+        } else {
+            setWatchlist(prev => [...prev, anime]);
+        }
+
+        setWatchAdded(!watchlist.some(item => item.id === anime.id))
+
+    }
+
+
     function getAnimes() {
 
         axios.get(`${import.meta.env.VITE_LARAVEL_API_URL}animes`)
@@ -40,7 +66,7 @@ function AnimeProvider({ children }) {
         <AnimeContext.Provider
             value={{
                 animes, italyTrends, setItalyTrends, suggested, setSuggested, dubIta, setDubIta,
-                search, setSearch
+                search, setSearch, watchAdded, toggleWatchlist, watchlist
             }}>
             {children}
         </AnimeContext.Provider>

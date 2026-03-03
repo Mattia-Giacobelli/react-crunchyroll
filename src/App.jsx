@@ -16,6 +16,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import AnimePage from "./Pages/AnimePage";
+import AZPage from "./Pages/AZPAge";
+import WatchList from "./Pages/WatchList";
 
 function App() {
 
@@ -30,12 +32,13 @@ function App() {
               <Route path="/latest" element={<LatestPage />} />
               <Route path="/popular" element={<PopularPage />} />
               <Route path="/simulcast" element={<SimulcastPage />} />
-              <Route path="/animes" element={<AnimesPage />} />
+              <Route path="/animes" element={<AZPage />} />
               <Route path="/animes/:id" element={<AnimePage />} />
               <Route path="/releases" element={<ReleasesPage />} />
               <Route path="/music" element={<MusicPage />} />
               <Route path="/genres/:id" element={<GenrePage />} />
               <Route path="/search" element={<SearchPage />} />
+              <Route path="/watchlist" element={<WatchList />} />
             </Route>
           </Routes>
         </BrowserRouter>

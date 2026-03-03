@@ -75,7 +75,7 @@ export default function Header() {
                                                             <NavLink
                                                                 key={genre.id}
                                                                 className="dropdown-item" type='button'
-                                                                to={`/genres/${genre.name}`}
+                                                                to={`/genres/${genre.id}`}
                                                             >
                                                                 {genre.name}
                                                             </NavLink>
@@ -93,7 +93,7 @@ export default function Header() {
                                                             <NavLink
                                                                 key={genre.id}
                                                                 className="dropdown-item" type='button'
-                                                                to={`/genres/${genre.name}`}
+                                                                to={`/genres/${genre.id}`}
                                                             >
                                                                 {genre.name}
                                                             </NavLink>

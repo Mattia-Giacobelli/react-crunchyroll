@@ -8,17 +8,27 @@ export default function GenrePage() {
     const { id } = useParams()
 
     const [animes, setAnimes] = useState([])
+    const [genre, setGenre] = useState({})
 
 
     function getGenreAnimes() {
 
 
-        axios.get(`${import.meta.env.VITE_LARAVEL_API_URL}genres/${id}`)
+        axios.get(`${import.meta.env.VITE_LARAVEL_API_URL}genres/animes/${id}`)
             .then(res => {
 
                 setAnimes(res.data.data)
                 console.log(res.data.data);
 
+
+            })
+
+
+
+        axios.get(`${import.meta.env.VITE_LARAVEL_API_URL}genres/${id}`)
+            .then(res => {
+                console.log(res.data.data);
+                setGenre(res.data.data)
 
             })
     }
@@ -36,7 +46,7 @@ export default function GenrePage() {
 
             <div className="container">
 
-                <h1 className="text-light  mb-3"></h1>
+                <h1 className="text-light  mb-3">{genre.name}</h1>
 
                 <div className="row row-cols-sm-2 row-cols-md-4 row-cols-lg-6">
 

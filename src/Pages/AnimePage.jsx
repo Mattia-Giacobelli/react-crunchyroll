@@ -94,7 +94,7 @@ export default function AnimePage() {
                         </span>
                     </h6>
 
-                    <div>
+                    <div className="d-flex g-3 align-items-center">
                         <button className="btn orange-btn me-3">
                             INIZIA A GUARDARE
                         </button>
@@ -103,10 +103,10 @@ export default function AnimePage() {
                         </button>
 
 
-                        <span className="orange p-2 fs-2">
+                        <span className="orange pb-3 fs-2">
                             <i class="bi bi-plus"></i>
                         </span>
-                        <span className="orange p-2 fs-4">
+                        <span className="orange ps-2 pb-3 fs-4">
                             <i class="bi bi-share"></i>
                         </span>
                     </div>

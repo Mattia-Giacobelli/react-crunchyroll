@@ -70,22 +70,24 @@ export default function HomePage() {
                                             className="swipe-img" />
 
                                         <div className="swipe-info">
-                                            <h1>{anime.name}</h1>
-
-                                            <h6>
-                                                <span>{anime.dubs.length + anime.subs.length}</span> Dub|Sub
-                                            </h6>
                                             <div>
-                                                <button className="btn orange-btn me-3">
-                                                    INIZIA A GUARDARE
-                                                </button>
-                                                <button onClick={() => { toggleWatchlist(anime) }} className="btn orange-btn-outline me-3">
-                                                    <i class={`bi ${watchAdded ? "bi-bookmark-fill" : "bi-bookmark"}`}></i>
-                                                </button>
+                                                <h1>{anime.name}</h1>
+
+                                                <h6>
+                                                    <span>{anime.dubs.length + anime.subs.length}</span> Dub|Sub
+                                                </h6>
+                                                <div>
+                                                    <button className="btn orange-btn me-3">
+                                                        INIZIA A GUARDARE
+                                                    </button>
+                                                    <button onClick={() => { toggleWatchlist(anime) }} className="btn orange-btn-outline me-3">
+                                                        <i class={`bi ${watchAdded ? "bi-bookmark-fill" : "bi-bookmark"}`}></i>
+                                                    </button>
+                                                </div>
+                                                <p>
+                                                    {anime.plot}
+                                                </p>
                                             </div>
-                                            <p>
-                                                {anime.plot}
-                                            </p>
                                         </div>
 
 
@@ -100,15 +102,15 @@ export default function HomePage() {
 
             <div className="container-custom text-light">
 
-                <h1>Anime di tendenza in Italia</h1>
+                <h1 className="mt-5 mb-4">Anime di tendenza in Italia</h1>
 
                 <AnimeSwiper animes={italyTrends} />
 
-                <h1>I nostri consigliati per te</h1>
+                <h1 className="mt-5 mb-4">I nostri consigliati per te</h1>
 
                 <AnimeSwiper animes={suggested} />
 
-                <h1>Doppiaggio in Italiano</h1>
+                <h1 className="mt-5 mb-4">Doppiaggio in Italiano</h1>
 
                 <AnimeSwiper animes={dubIta} />
 

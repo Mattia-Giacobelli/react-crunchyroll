@@ -11,6 +11,8 @@ export default function PopularPage() {
 
             <div className="container">
 
+                <h1 className="text-light mt-5 mb-4"> Popular</h1>
+
                 <div className="row row-cols-sm-2 row-cols-md-4 row-cols-lg-6">
 
                     {animes && animes.map(anime => {

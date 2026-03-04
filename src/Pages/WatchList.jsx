@@ -18,7 +18,7 @@ export default function WatchList() {
 
 
 
-                <h1 className="text-light  mb-5">Watch List</h1>
+                <h1 className="text-light mt-5 mb-5">Watch List</h1>
 
                 <div className="row row-cols-sm-2 row-cols-md-4 row-cols-lg-6">
 

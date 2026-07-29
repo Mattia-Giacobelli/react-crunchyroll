@@ -81,7 +81,7 @@ export default function HomePage() {
                                                         INIZIA A GUARDARE
                                                     </button>
                                                     <button onClick={() => { toggleWatchlist(anime) }} className="btn orange-btn-outline me-3">
-                                                        <i class={`bi ${watchAdded ? "bi-bookmark-fill" : "bi-bookmark"}`}></i>
+                                                        <i className={`bi ${watchAdded ? "bi-bookmark-fill" : "bi-bookmark"}`}></i>
                                                     </button>
                                                 </div>
                                                 <p>
@@ -116,7 +116,7 @@ export default function HomePage() {
 
                 <div className="d-flex flex-column justify-content-center align-items-center">
 
-                    <h6 className="text-center text-light  w-50 mt-5">
+                    <h6 className="text-center text-light w-100 w-md-50 mt-5">
                         Stai ancora cercando qualcosa da guardare? <br />
                         Dai un occhiata al catalogo
                     </h6>

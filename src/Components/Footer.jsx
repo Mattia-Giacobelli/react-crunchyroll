@@ -14,9 +14,9 @@ export default function Footer() {
                 <div className="container-black d-flex justify-content-center">
                     <div className="d-flex justify-content-between align-items-center w-50">
 
-                        <img src={footerLogo} alt="logo" />
+                        <img className='foot-logo' src={footerLogo} alt="logo" />
 
-                        <button className='btn btn-outline-light light-hover'>
+                        <button className='btn foot-btn btn-outline-light light-hover'>
 
                             <i class="bi bi-globe p-2"></i>
                             Italiano

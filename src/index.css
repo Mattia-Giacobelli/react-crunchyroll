@@ -154,7 +154,7 @@ main {
     .swipe-info {
       padding: 3rem;
       color: lightgray;
-      width: 100vw;
+      width: 100%;
       font-weight: bold;
       margin-top: auto;
       margin-right: auto;
@@ -170,7 +170,7 @@ main {
 
     @media (max-width: 768px) {
       .swipe-info {
-        width: 100vw;
+        width: 100%;
         padding: 1.5rem;
         margin-left: 0;
         margin-right: auto;
@@ -237,11 +237,13 @@ main {
 
   .container-custom {
 
-    margin: 0 3vw;
+    padding: 0 3vw;
+    box-sizing: border-box;
+    width: 100%;
 
     .anime-swiper {
 
-      width: 100%;
+      max-width: 100%;
       height: 350px;
 
       .swiper-slide {
@@ -250,7 +252,7 @@ main {
 
         .anime-swipe-img {
 
-          width: 100%;
+          max-width: 100%;
           height: 80%;
           object-fit: cover;
           border-radius: 8px;
@@ -385,7 +387,7 @@ main {
     .anime-info {
       position: relative;
       z-index: 2;
-      width: 100vw;
+      width: 100%;
       padding: 3rem;
       color: white;
       margin-top: auto;
@@ -428,7 +430,7 @@ main {
 
     @media (max-width: 768px) {
       .anime-info {
-        width: 100vw;
+        width: 100%;
         padding: 1.5rem;
         margin-top: 200px;
         background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
@@ -460,13 +462,14 @@ main {
   }
 
   .portfolio {
-
     position: fixed;
     left: 50px;
     bottom: 50px;
-    z-index: 10;
-
+    z-index: 999;
+    max-width: calc(100vw - 40px);
   }
+
+
 
 }
 
@@ -512,4 +515,27 @@ footer {
 
     }
   }
+}
+
+@media screen and (max-width:768px) {
+
+  .foot-logo {
+
+    width: 50%;
+
+  }
+
+  .foot-btn {
+
+    width: 30%;
+
+    font-size: 0.5rem
+  }
+
+  .portfolio {
+
+    top: 100vh - 50px;
+
+  }
+
 }

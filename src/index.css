@@ -142,6 +142,8 @@ main {
   min-height: 80vh;
   background-color: black;
 
+  position: relative;
+
   .jumbo {
 
     margin-top: -30px;
@@ -455,6 +457,14 @@ main {
 
       margin-top: rem;
     }
+  }
+
+  .portfolio {
+
+    position: fixed;
+    left: 50px;
+    bottom: 50px;
+
   }
 
 }
